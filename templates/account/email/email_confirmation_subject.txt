@@ -1,0 +1,10 @@
+{% load account %}
+{% load i18n %}
+
+{% user_display user as user_display %}
+
+{% autoescape off %}
+{% blocktrans %}
+Hello {{user_display}}
+{% endblocktrans %}
+{% endautoescape %}

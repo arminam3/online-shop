@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # My_Apps
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
+    'products.apps.ProductsConfig',
 ]
 
 SITE_ID = 1
@@ -121,13 +122,19 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'arminam3214@gmail.com'
+# EMAIL_HOST_PASSWORD = 'tskcywucarycyxxw'
+
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'fa'
 
 TIME_ZONE = 'Asia/Tehran'
 
