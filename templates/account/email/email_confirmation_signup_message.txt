@@ -7,3 +7,6 @@ Please Confirm Your Email By This Link
 {{ activate_url }}
 {% endblocktrans %}
 {% endautoescape %}
+
+
+

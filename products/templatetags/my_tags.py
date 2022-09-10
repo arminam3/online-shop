@@ -34,3 +34,8 @@ def english_numbers_convertor(number):
         number_splited += f_number_list[j]
 
     return number_splited
+
+
+@register.filter
+def active_comment(comment):
+    return comment.filter(active=True)

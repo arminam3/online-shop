@@ -4,7 +4,25 @@ from django.contrib.auth import get_user_model
 
 from extensions.utils import jalali_convertor
 
+
+#-------- Managers ----------
+
+# class ActiveProductManager(models.Manager):
+#     def get_queryset(self):
+#         return super().get_queryset().filter(active=True)
+
+
+class ActiveCommentManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(active=True)
+
+
+# --------Models---------
+
 class Product(models.Model):
+
+
+
     title = models.CharField(max_length=100)
     description = models.TextField()
     price = models.PositiveIntegerField(default=0)
@@ -40,6 +58,10 @@ class Comment(models.Model):
     datetime_created = models.DateTimeField(auto_now_add=True)
     datetime_modified = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)
+
+    #Manager
+    objects = models.Manager()
+    active_product = ActiveCommentManager
 
     def j_datetime_created(self):
         return jalali_convertor(self.datetime_created)
