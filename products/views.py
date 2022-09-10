@@ -1,9 +1,17 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
+# from django.utils.translation import gettext as _
+from django.http import HttpResponse
 
 
 from .models import Product, Comment
 from .forms import CommentForm
+
+
+# def hello(request):
+#     result = _('hello')
+#     return HttpResponse(result)
+
 
 class ProductListView(generic.ListView):
     # model = Product
