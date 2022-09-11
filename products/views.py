@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 # from django.utils.translation import gettext as _
 from django.http import HttpResponse
+from django.contrib import messages
 
 
 from .models import Product, Comment
@@ -39,6 +40,10 @@ class CommentCreateView(generic.CreateView):
     # template_name = 'products/product_list.html'
 
     def get_success_url(self):
+        messages.success(
+            self.request,
+            "نظر شما با موفقیت ثبت شد"
+        )
         return reverse('product:detail', args=[self.kwargs['pk']])
 
     def form_valid(self, form):

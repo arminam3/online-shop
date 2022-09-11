@@ -66,3 +66,6 @@ class Comment(models.Model):
 
     def j_datetime_created(self):
         return jalali_convertor(self.datetime_created)
+
+    def __str__(self):
+        return f"{self.author }"

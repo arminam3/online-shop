@@ -14,6 +14,7 @@ from pathlib import Path
 # from environs import Env
 from django.urls import reverse_lazy
 from decouple import config
+from django.contrib.messages import constants as msg_cons
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,7 +29,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DJANGO_DEBUG", cast=bool)
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0','.herokuapp.com']
 
 # Application definition
 
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'allauth',
     'allauth.account',
+    'rosetta',
 
     # My_Apps
     'accounts.apps.AccountsConfig',
@@ -134,7 +136,12 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'fa'
+LANGUAGE_CODE = 'fa-ir'
+
+LANGUAGES = (
+    ('en', 'English'),
+    ('fa', 'Persian'),
+)
 
 TIME_ZONE = 'Asia/Tehran'
 
@@ -166,3 +173,11 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+#messages
+MESSAGE_TAGS = {
+    msg_cons.ERROR: 'alert alert-danger',
+    msg_cons.SUCCESS: 'alert alert-success',
+    msg_cons.WARNING: 'alert alert-warning',
+    msg_cons.INFO: 'alert alert-info',
+}

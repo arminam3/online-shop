@@ -9,7 +9,7 @@ def english_numbers_convertor(number):
     triple = (len(str(number)) - 1) // 3
     f_number_list = list(str(number))
     jobran = 0
-    if LANGUAGE_CODE == 'fa':
+    if LANGUAGE_CODE == 'fa' or 'fa-ir':
         persian_num = {
             "0": "۰",
             "1": "۱",
