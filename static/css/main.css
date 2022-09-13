@@ -94,8 +94,16 @@ INDEX:
     Default Body Font:          'IRANSansX', sans-serif;
 
 */
-@import url("https://fonts.googleapis.com/css?family=IRANSansX:300,400,500,600,700,800,900|Roboto:300,400,500,700,900|Open+Sans:400,600,700");
+/*@import url("https://fonts.googleapis.com/css?family=IRANSansX:300,400,500,600,700,800,900|Roboto:300,400,500,700,900|Open+Sans:400,600,700");*/
 
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/Sahel.eot') format('eot'),
+	url('../fonts/Sahel.woff') format('woff'),
+	url('../fonts/Sahel.woff2') format('woff2');
+}
 /*****************************
 00. Global CSS
 *****************************/

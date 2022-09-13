@@ -80,6 +80,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                #Custom
+                'cart.context_processor.cart',
             ],
         },
     },
@@ -137,7 +140,7 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'fa-ir'
+LANGUAGE_CODE = 'fa'
 
 LANGUAGES = (
     ('en', 'English'),
@@ -182,3 +185,12 @@ MESSAGE_TAGS = {
     msg_cons.WARNING: 'alert alert-warning',
     msg_cons.INFO: 'alert alert-info',
 }
+
+#Localization
+# LOCALE_PATHS = [
+# 'products/locale'
+    # os.path.join(BASE_DIR, 'products/locale'),
+#     os.path.join(BASE_DIR, 'cart/locale'),
+#     os.path.join(BASE_DIR, 'cart/locale'),
+    # os.path.join(BASE_DIR, 'locals'),
+# ]

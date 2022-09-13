@@ -1,12 +1,14 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
-# from django.utils.translation import gettext as _
+# from django.utils.translation import
 from django.http import HttpResponse
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 from .models import Product, Comment
 from .forms import CommentForm
+from cart.forms import AddProductToCartForm
 
 
 # def hello(request):
@@ -28,13 +30,14 @@ class ProductDetailView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['form'] = CommentForm
+        context['comment_form'] = CommentForm
+        context['cart_form'] = AddProductToCartForm
 
 
         return context
 
 
-class CommentCreateView(generic.CreateView):
+class CommentCreateView(LoginRequiredMixin, generic.CreateView):
     model = Comment
     form_class = CommentForm
     # template_name = 'products/product_list.html'
