@@ -8,6 +8,7 @@ from django.utils.translation import gettext as _
 
 from products.models import Product
 from .forms import AddProductToCartForm
+from kavenegar import *
 
 from .cart import Cart
 

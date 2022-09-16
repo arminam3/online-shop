@@ -1,4 +1,5 @@
 {% extends '_base.html' %}
+{% load static %}
 
 {% block title %}
 Home Page
@@ -8,4 +9,13 @@ Home Page
 home
     <a href="{% url 'product:list' %}">Product List</a>
 
+
+
+    <!-- ************************* JS Files ************************* -->
+
+    <!-- jQuery JS -->
+    <script src="{% static 'js/vendor.js' %}"></script>
+
+    <!-- Main JS -->
+    <script src="{% static 'js/main.js' %}"></script>
 {% endblock %}

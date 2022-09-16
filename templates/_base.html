@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+{% load my_tags %}
 
 <!doctype html>
 <html lang="en">
@@ -144,21 +145,22 @@
 
 
 
-{#<script>#}
-{#    var message_ele = document.getElementById("message_container");#}
+
+<script>
+    var message_ele = document.getElementById("message_container");
+
+    setTimeout(function () {
+        message_ele.style.display = "none";
+    }, 3000);
+</script>
+
+{#<!-- ************************* JS Files ************************* -->#}
 {##}
-{#    setTimeout(function () {#}
-{#        message_ele.style.display = "none";#}
-{#    }, 3000);#}
-{#</script>#}
-
-<!-- ************************* JS Files ************************* -->
-
-<!-- jQuery JS -->
-<script src="{% static 'js/vendor.js' %}"></script>
-
-<!-- Main JS -->
-<script src="{% static 'js/main.js">' %}"></script>
+{#<!-- jQuery JS -->#}
+{#<script src="{% static 'js/vendor.js' %}"></script>#}
+{##}
+{#<!-- Main JS -->#}
+{#<script src="{% static 'js/main.js">' %}"></script>#}
 {#<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"#}
 {#        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"#}
 {#        crossorigin="anonymous"></script>#}

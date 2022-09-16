@@ -9,6 +9,10 @@
 {% endblock %}
 
 {% block content %}
+
+    {% trans 'Cart' as a %}
+    {% include 'topheader.html' with header_name=a %}
+
     <!-- Main Content Wrapper Start -->
     <div class="main-content-wrapper">
         <div class="page-content-inner ptb--80">
@@ -131,6 +135,15 @@
         </div>
     </div>
     <!-- Main Content Wrapper Start -->
+
+
+        <!-- ************************* JS Files ************************* -->
+
+    <!-- jQuery JS -->
+    <script src="{% static 'js/vendor.js' %}"></script>
+
+    <!-- Main JS -->
+    <script src="{% static 'js/main.js' %}"></script>
 {% endblock %}
 
 
