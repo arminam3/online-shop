@@ -17,9 +17,11 @@
             <div class="container">
                 <div class="row no-gutters mb--80">
                     <div class="col-12 col-sm-4 product-main-image d-flex align-content-center">
-                        <img class="m-auto" style="max-height: 400px;"
-                             src="{{ product.cover.url }}"
-                             alt="Photo">
+                        {% if product.cover %}
+                            <img class="m-auto" style="max-height: 400px;"
+                                 src="{{ product.cover.url }}"
+                                 alt="Photo">
+                        {% endif %}
                     </div>
                     <div class="col-12 col-sm-8 product-main-details mt-md--50">
                         <div class="product-summary pl-lg--30 pl-md--0 text-right p-4">
@@ -46,7 +48,6 @@
                                                min="1" max="20">
                                     </div>
                                     <button type="submit" class="btn  btn-bg-red btn-color-white btn-hover-2">
-                                        {#                                            onclick="window.location.href='cart.html'">#}
                                         {% trans 'Add to Cart' %}
                                     </button>
                                 </form>
