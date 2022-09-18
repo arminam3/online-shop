@@ -3,6 +3,8 @@
 {% load crispy_forms_tags %}
 {% load my_tags %}
 {% load i18n %}
+{% load jalali_tags %}
+{% load humanize %}
 
 {% block title %}
     {{ product.title }}
@@ -31,7 +33,7 @@
                             {#                            </p>#}
 
                             <div class="my-5 py-5 product-price-wrapper mb--25">
-                                <span class="money"> {{ product.price|e2f }}{% trans '$' %}</span>
+                                <span class="money"> {{ product.price|intcomma:False|e2f }}{% trans '$' %}</span>
                                 {#                                <span class="money text-success">۱۴۸,۰۰۰ تومان</span>#}
                                 {#                                <span class="price-separator">-</span>#}
                                 {#                                <span class="money old-price text-danger">۲۱۰,۰۰۰ تومان</span>#}
@@ -86,7 +88,8 @@
                                      aria-labelledby="nav-description-tab">
                                     <div class="product-description text-justify">
                                         <p>
-                                            {{ product.description }}
+                                            {{ product.description|safe }}
+
                                         </p>
 
 
@@ -134,7 +137,7 @@
                                                                     <div class="review__meta">
                                                                         <strong class="review__author px-4">  {{ comment.author }}</strong>
                                                                         <span class="review__dash">-</span>
-                                                                        <span class="review__published-date">({{ comment.j_datetime_created }})</span>
+                                                                        <span class="review__published-date">({{ comment.datetime_created|to_jalali:'%Y/%B/%d _ %H:%M:%S' }})</span>
                                                                     </div>
                                                                     <div class="product-rating">
                                                                         <div class="m-0 star-rating star-five">
@@ -146,9 +149,9 @@
                                                             </div>
                                                             <p>
 
-                                                                {% blocktrans with comment.stars as  author and comment.product  as p %}
-                                                                    this is {{ author }} and {{ p }}
-                                                                {% endblocktrans %}
+{#                                                                {% blocktrans with comment.stars as  author and comment.product  as p %}#}
+{#                                                                    this is {{ author }} and {{ p }}#}
+{#                                                                {% endblocktrans %}#}
                                                             </p>
                                                             <p class="review__description text-right px-4 mr--10 pr-6 ">
                                                                 {{ comment.body }}

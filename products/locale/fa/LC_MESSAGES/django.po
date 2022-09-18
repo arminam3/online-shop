@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-13 09:59+0430\n"
+"POT-Creation-Date: 2022-09-17 23:25+0430\n"
 "PO-Revision-Date: 2022-09-10 18:56+0430\n"
 "Last-Translator:   <armin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,95 +18,104 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.9.8\n"
 
-#: .\models.py:48
+#: .\models.py:34
+#, fuzzy
+#| msgid "Product Descriptions"
+msgid "Product cover"
+msgstr "توضیحات محصول"
+
+#: .\models.py:36
+msgid "DateTime of creation"
+msgstr ""
+
+#: .\models.py:57
 msgid "Very Bad"
 msgstr "خیلی بد"
 
-#: .\models.py:49
+#: .\models.py:58
 msgid "Bad"
 msgstr "بد"
 
-#: .\models.py:50
+#: .\models.py:59
 msgid "Normal"
 msgstr "معمولی"
 
-#: .\models.py:51
+#: .\models.py:60
 msgid "Good"
 msgstr "خوب"
 
-#: .\models.py:52
+#: .\models.py:61
 msgid "Perfect"
 msgstr "عالی"
 
-#: .\models.py:57
+#: .\models.py:66
 msgid "Please Enter Your Idea"
 msgstr "لطفا دیدگاه خود را وارد نمایید"
 
-#: .\models.py:58
+#: .\models.py:67
 msgid "Stars"
 msgstr "امتیاز"
 
-#: .\templates\products\product_detail.html:30
+#: .\templates\products\product_detail.html:35
 msgid "$"
 msgstr "تومان"
 
-#: .\templates\products\product_detail.html:34
+#: .\templates\products\product_detail.html:39
 msgid "Product details of"
 msgstr "توضیحات محصول"
 
-#: .\templates\products\product_detail.html:47
-#: .\templates\products\product_list.html:90
+#: .\templates\products\product_detail.html:52
+#: .\templates\products\product_list.html:91
 msgid "Add to Cart"
 msgstr "افزودن به سبد خرید"
 
-#: .\templates\products\product_detail.html:52
+#: .\templates\products\product_detail.html:57
 msgid "Categories"
 msgstr "دسته بندی ها"
 
-#: .\templates\products\product_detail.html:68
+#: .\templates\products\product_detail.html:73
 msgid "Product Descriptions"
 msgstr "توضیحات محصول"
 
-#: .\templates\products\product_detail.html:73
+#: .\templates\products\product_detail.html:78
 msgid "Attributes"
 msgstr "ویژگی ها"
 
-#: .\templates\products\product_detail.html:77
+#: .\templates\products\product_detail.html:82
 msgid "Comments"
 msgstr "نظرات"
 
-#: .\templates\products\product_detail.html:120
+#: .\templates\products\product_detail.html:125
 msgid "Comment for"
 msgstr "نظر برای"
 
-#: .\templates\products\product_detail.html:144
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "                                                                this is %"
-#| "(author)s and %(gg)s\n"
-#| "                                                            "
-msgid ""
-"\n"
-"                                                                this is %"
-"(author)s and %(p)s\n"
-"                                                            "
-msgstr ""
-"\n"
-"سلام این %(author)s است  و نام محصول %(gg)s است."
-
-#: .\templates\products\product_detail.html:162
+#: .\templates\products\product_detail.html:168
 msgid "Write Your Comment"
 msgstr "نظر خود را بنویسید"
 
-#: .\templates\products\product_detail.html:171
+#: .\templates\products\product_detail.html:177
 msgid "Submit"
 msgstr "ارسال"
 
-#: .\templates\products\product_detail.html:175
+#: .\templates\products\product_detail.html:181
 msgid "To write your comment please"
 msgstr "برای وارد کردن دیدگاه لطفا"
 
-#: .\templates\products\product_detail.html:176
+#: .\templates\products\product_detail.html:183
 msgid "Login"
 msgstr "ورود"
+
+#, fuzzy
+#~| msgid ""
+#~| "\n"
+#~| "                                                                this is %"
+#~| "(author)s and %(gg)s\n"
+#~| "                                                            "
+#~ msgid ""
+#~ "\n"
+#~ "                                                                this is %"
+#~ "(author)s and %(p)s\n"
+#~ "                                                            "
+#~ msgstr ""
+#~ "\n"
+#~ "سلام این %(author)s است  و نام محصول %(gg)s است."

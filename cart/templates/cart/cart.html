@@ -3,6 +3,7 @@
 {% load i18n %}
 {% load crispy_forms_tags %}
 {% load my_tags %}
+{% load humanize %}
 
 {% block title %}
     {% trans 'Cart' %}
@@ -58,7 +59,7 @@
                                                 </td>
                                                 <td class="product-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money"> {{ item.product_obj.price|e2f }}{% trans '$' %}</span>
+                                                                <span class="money"> {{ item.product_obj.price|intcomma:False|e2f }}{% trans '$' %}</span>
                                                             </span>
                                                 </td>
                                                 <td class="product-quantity">
@@ -81,7 +82,7 @@
                                                 <td class="product-total-price">
 
                                                     <span class="product-price-wrapper">
-                                                                <span class="money">{{ item.total_price_by_quantity|e2f }}{% trans '$' %}</span>
+                                                                <span class="money">{{ item.total_price_by_quantity|intcomma:False|e2f }}{% trans '$' %}</span>
                                                             </span>
                                                 </td>
                                             </tr>
@@ -119,7 +120,7 @@
                                         </div>
                                         <div class="cart-calculator__item--value">
                                                 <span class="product-price-wrapper">
-                                                    <span class="money">{{ cart.get_total_price|e2f }}{% trans '$' %}</span>
+                                                    <span class="money">{{ cart.get_total_price|intcomma:False|e2f }}{% trans '$' %}</span>
                                                 </span>
                                         </div>
                                     </div>

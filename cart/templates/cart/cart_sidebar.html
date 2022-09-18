@@ -1,6 +1,7 @@
 {% load static %}
 {% load i18n %}
 {% load my_tags %}
+{% load humanize %}
 
 <!-- Mini Cart Start -->
     <aside class="mini-cart" id="miniCart">
@@ -25,7 +26,7 @@
                                         </a>
                                     </span>
                                     <span class="mini-cart__product__quantity">
-                                        <span>{{ item.product_obj.price|e2f }}{% trans '$' %}</span> &#215; <span>{{ item.quantity|e2f }}</span>
+                                        <span>{{ item.product_obj.price|intcomma:False|e2f }}{% trans '$' %}</span> &#215; <span>{{ item.quantity|e2f }}</span>
                                     </span>
                                 </div>
                             </li>

@@ -2,6 +2,10 @@ from django.db import models
 from django.shortcuts import reverse
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
+from django.utils import timezone
+
+from jalali_date import date2jalali, datetime2jalali
+from ckeditor.fields import RichTextField
 
 from extensions.utils import jalali_convertor
 
@@ -25,12 +29,12 @@ class Product(models.Model):
 
 
     title = models.CharField(max_length=100)
-    description = models.TextField()
+    description = RichTextField()
     price = models.PositiveIntegerField(default=0)
     active = models.BooleanField(default=True)
     cover = models.ImageField(verbose_name=_('Product cover'), upload_to='product/product_cover', blank=True)
 
-    datetime_created = models.DateTimeField(auto_now_add=True)
+    datetime_created = models.DateTimeField(_('DateTime of creation'), default=timezone.now)
     datetime_modified = models.DateTimeField(auto_now=True)
 
 
@@ -43,8 +47,13 @@ class Product(models.Model):
     def active_comments(self):
         return Comment.objects.filter(product=self, active=True)
 
+    def j_datetime_created(self):
+        return jalali_convertor(self.datetime_created)
 
 class Comment(models.Model):
+    class Meta:
+        ordering = ['-datetime_created']
+
     PRODUCT_STARS = (
         ('1', _('Very Bad')),
         ('2', _('Bad')),
@@ -70,3 +79,6 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.author }"
+
+    def d_j_datetime_created(self):
+        return datetime2jalali(self.datetime_created).strftime('%y/%m/%d _ %H:%M:%S')

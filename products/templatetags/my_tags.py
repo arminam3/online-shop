@@ -10,44 +10,42 @@ def english_numbers_convertor(number):
     f_number_list = list(str(number))
     jobran = 0
     if LANGUAGE_CODE ==('fa' or 'fa-ir'):
-        persian_num = {
-            "0": "۰",
-            "1": "۱",
-            "2": "۲",
-            "3": "۳",
-            "4": "۴",
-            "5": "۵",
-            "6": "۶",
-            "7": "۷",
-            "8": "۸",
-            "9": "۹",
-        }
-        for e, p in persian_num.items():
-            # global f_number
-            number = str(number).replace(e, p)
+        # persian_num = {
+        #     "0": "۰",
+        #     "1": "۱",
+        #     "2": "۲",
+        #     "3": "۳",
+        #     "4": "۴",
+        #     "5": "۵",
+        #     "6": "۶",
+        #     "7": "۷",
+        #     "8": "۸",
+        #     "9": "۹",
+        # }
+        # for e, p in persian_num.items():
+        #     # global f_number
+        #     number = str(number).replace(e, p)
+        #
+        #
+        # f_number_list = list(str(number))
+        arabic = '۰۱۲۳۴۵۶۷۸۹'
+        english = '0123456789'
+
+        translation_table = str.maketrans(english, arabic)
+        number = str(number).translate(translation_table)
+    return number
 
 
-        f_number_list = list(str(number))
-
-
-    for i in range(triple):
-        f_number_list.insert(-((i+1)*3) + jobran, ',')
-        jobran -= 1
-
-    number_splited = ''
-    for j, index in enumerate(f_number_list):
-        number_splited += f_number_list[j]
-
-    return number_splited
-    # else:
-    #     for i in range(triple):
-    #         f_number_list.insert(-((i + 1) * 3) + jobran, ',')
-    #         jobran -= 1
+    # for i in range(triple):
+    #     f_number_list.insert(-((i+1)*3) + jobran, ',')
+    #     jobran -= 1
     #
-    #     number_splited = ''
-    #     for j, index in enumerate(f_number_list):
-    #         number_splited += f_number_list[j]
-    #     return number_splited
+    # number_splited = ''
+    # for j, index in enumerate(f_number_list):
+    #     number_splited += f_number_list[j]
+    #
+    # return number_splited
+
 
 
 @register.filter
