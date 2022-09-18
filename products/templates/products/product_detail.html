@@ -28,9 +28,11 @@
                     <div class="col-12 col-sm-8 product-main-details mt-md--50">
                         <div class="product-summary pl-lg--30 pl-md--0 text-right p-4">
                             <h3 class="product-title mb--20">{{ product.title }}</h3>
-                            {#                            <p class="product-short-description mb--20">#}
-                            {#                                {{ product.description }}#}
-                            {#                            </p>#}
+                            {% if product.short_description %}
+                                <p class="product-short-description mb--20">
+                                    {{ product.short_description|truncatechars:200 }}
+                                </p>
+                            {% endif %}
 
                             <div class="my-5 py-5 product-price-wrapper mb--25">
                                 <span class="money"> {{ product.price|intcomma:False|e2f }}{% trans '$' %}</span>

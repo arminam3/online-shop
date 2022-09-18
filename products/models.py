@@ -29,6 +29,7 @@ class Product(models.Model):
 
 
     title = models.CharField(max_length=100)
+    short_description = models.TextField(blank=True)
     description = RichTextField()
     price = models.PositiveIntegerField(default=0)
     active = models.BooleanField(default=True)
